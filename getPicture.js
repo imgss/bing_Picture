@@ -15,20 +15,19 @@ nightmare
     let re = /url\("(.+?)\"\)/
     re.test(result)
     https.get(RegExp.$1,(res) => {
-      let chunk = '',
-        stream = fs.createWriteStream('./img/' + (new Date()).toLocaleString().split(' ')[0] + '.jpg',{
+      let exist = fs.existsSync('./img/')
+      if(!exist){
+        fs.mkdirSync('./img')
+      }
+      let stream = fs.createWriteStream('./img/' + (new Date()).toLocaleString().split(' ')[0] + '.jpg',{
         defaultEncoding : 'binary'
       } )
       res.setEncoding("binary"); 
       res.on('data',(data) => {
         stream.write(data);
-        //chunk+=data
       })
       res.on('end', () => {
         stream.end()
-        // fs.writeFile(Date.now() + '.jpg', chunk, "binary", (err)=>{
-        //   console.log('ok')
-        // })
       })
     })
   })

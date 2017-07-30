@@ -1,7 +1,7 @@
-## 获取bing(https://cn.bing.com)每日背景图
+## 获取bing(https://cn.bing.com) 每日背景图
 
 ```bash
-npm i
+cnpm i
 node getPicture
 ```
 下载的图片会放到img文件夹下
