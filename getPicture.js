@@ -28,6 +28,7 @@ nightmare
       })
       res.on('end', () => {
         stream.end()
+        console.log('美图下载完成')
       })
     })
   })

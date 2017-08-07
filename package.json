@@ -4,9 +4,10 @@
   "description": "",
   "main": "getPicture.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node getPicture"
   },
-  "author": "",
+  "author": "imgss",
   "license": "ISC",
   "dependencies": {
     "nightmare": "^2.10.0"
